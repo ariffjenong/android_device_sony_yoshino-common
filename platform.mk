@@ -24,6 +24,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel
 
+# Doze
+PRODUCT_PACKAGES += \
+    Doze
+
 QCOM_SOONG_NAMESPACE := $(PLATFORM_PATH)/hardware/qcom-caf
 
 ### APEX
