@@ -82,6 +82,10 @@ vendor.vidc.enc.disable.pq=true
 
 # OpenGLES version
 ro.opengles.version=196610
+ro.hardware.egl=adreno
+
+# vulkan
+ro.hardware.vulkan=msm8998
 
 # VDS WFD solution
 persist.hwc.enable_vds=1
