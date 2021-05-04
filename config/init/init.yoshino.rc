@@ -19,8 +19,6 @@ import /vendor/etc/init/hw/init.yoshino.srv.rc
 import /vendor/etc/init/hw/init.yoshino.usb.rc
 
 on early-init
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
 
     write /sys/module/msm_rtb/parameters/enable 0
 
