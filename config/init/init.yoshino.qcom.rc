@@ -117,9 +117,6 @@ on post-fs-data
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
 
-    # Create IOP deamon related dirs
-    mkdir /data/vendor/iop 0700 root system
-
     # NFC local data and nfcee xml storage
     mkdir /data/vendor/nfc 0770 nfc nfc
     mkdir /data/vendor/nfc/param 0770 nfc nfc
