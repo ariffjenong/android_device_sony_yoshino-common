@@ -42,6 +42,7 @@ cc_binary {
         "libdisppower-msm8998",
         "libperfmgr",
         "pixel-power-ext-V1-ndk_platform",
+        "libprocessgroup",
     ],
     srcs: [
         "aidl/service.cpp",
