@@ -65,6 +65,7 @@ debug.sf.hw=1
 debug.gralloc.enable_fb_ubwc=1
 debug.sf.latch_unsignaled=1
 vendor.display.perf_hint_window=50
+vendor.display.disable_scaler=1
 
 # HWUI
 debug.hwui.use_buffer_age=false
