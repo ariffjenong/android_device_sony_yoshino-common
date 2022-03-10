@@ -58,8 +58,8 @@ PRODUCT_PACKAGES += \
     ims-ext-common_system \
     ims_ext_common.xml
 
-PRODUCT_BOOT_JARS += \
-    ims-ext-common_system
+#PRODUCT_BOOT_JARS += \
+#    ims-ext-common_system
 
 ### IPV6
 PRODUCT_PACKAGES += \
@@ -125,8 +125,8 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 ### VNDK
 PRODUCT_PACKAGES += \
