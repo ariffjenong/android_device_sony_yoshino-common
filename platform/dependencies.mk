@@ -113,7 +113,6 @@ PRODUCT_PACKAGES += \
     libion \
     libminijail \
     libstdc++.vendor \
-    libtinyxml \
     libtinyxml.vendor \
     libxml2
 
