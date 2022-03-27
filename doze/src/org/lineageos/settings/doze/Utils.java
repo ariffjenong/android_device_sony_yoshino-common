@@ -21,8 +21,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.display.AmbientDisplayConfiguration;
-import android.os.PowerManager;
-import android.os.SystemClock;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
@@ -40,10 +38,10 @@ public final class Utils {
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
     protected static final String ALWAYS_ON_DISPLAY = "always_on_display";
-    protected static final String WAKE_ON_GESTURE_KEY = "wake_on_gesture";
     protected static final String CATEG_TILT_SENSOR = "tilt_sensor";
     protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
+    protected static final String DOZE_ENABLE = "doze_enable";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
@@ -88,16 +86,9 @@ public final class Utils {
                 DOZE_ENABLED, enable ? 1 : 0);
     }
 
-    protected static void wakeOrLaunchDozePulse(Context context) {
-        if (isWakeOnGestureEnabled(context)) {
-            if (DEBUG) Log.d(TAG, "Wake up display");
-            PowerManager powerManager = context.getSystemService(PowerManager.class);
-            powerManager.wakeUp(SystemClock.uptimeMillis(), PowerManager.WAKE_REASON_GESTURE, TAG);
-        } else {
-            if (DEBUG) Log.d(TAG, "Launch doze pulse");
-            context.sendBroadcastAsUser(
-                    new Intent(DOZE_INTENT), new UserHandle(UserHandle.USER_CURRENT));
-        }
+    protected static void launchDozePulse(Context context) {
+        if (DEBUG) Log.d(TAG, "Launch doze pulse");
+        context.sendBroadcastAsUser(new Intent(DOZE_INTENT), new UserHandle(UserHandle.USER_CURRENT));
     }
 
     protected static boolean enableAlwaysOn(Context context, boolean enable) {
@@ -106,8 +97,10 @@ public final class Utils {
     }
 
     protected static boolean isAlwaysOnEnabled(Context context) {
+	    final boolean enabledByDefault = context.getResources()
+		                    .getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnEnabled);
         return Settings.Secure.getIntForUser(context.getContentResolver(),
-                DOZE_ALWAYS_ON, 1, UserHandle.USER_CURRENT) != 0;
+                DOZE_ALWAYS_ON, alwaysOnDisplayAvailable(context) && enabledByDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
     }
 
     protected static boolean alwaysOnDisplayAvailable(Context context) {
@@ -122,10 +115,6 @@ public final class Utils {
     protected static boolean isGestureEnabled(Context context, String gesture) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(gesture, false);
-    }
-
-    protected static boolean isWakeOnGestureEnabled(Context context) {
-        return isGestureEnabled(context, WAKE_ON_GESTURE_KEY);
     }
 
     protected static boolean isPickUpEnabled(Context context) {
