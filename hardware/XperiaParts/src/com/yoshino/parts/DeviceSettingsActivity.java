@@ -20,20 +20,22 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
-public class DeviceSettingsActivity extends Activity {
+
+public class DeviceSettingsActivity extends CollapsingToolbarBaseActivity {
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
         DeviceSettingsFragment deviceSettingsFragment;
         if (fragment == null) {
             deviceSettingsFragment = new DeviceSettingsFragment();
-            getFragmentManager().beginTransaction().add(android.R.id.content, deviceSettingsFragment).commit();
+            getFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, deviceSettingsFragment)
+                .commit();
         }
     }
 
