@@ -124,6 +124,7 @@ DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 TARGET_ODM_PROP += $(PLATFORM_PATH)/odm.prop
 # This is a reset, add more in devices if needed
 TARGET_SYSTEM_PROP := $(PLATFORM_PATH)/system.prop
+TARGET_SYSTEM_EXT_PROP += $(PLATFORM_PATH)/system_ext.prop
 TARGET_VENDOR_PROP := $(PLATFORM_PATH)/vendor.prop
 
 ### RECOVERY
