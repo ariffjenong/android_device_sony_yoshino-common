@@ -53,6 +53,14 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+        lib64/vendor.somc.hardware.security.secd@1.0.so)
+            "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
+            sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
+            ;;
+    esac
+}
 
 # Initialize the helper
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
