@@ -114,8 +114,10 @@ TARGET_USES_VULKAN := true
 ### HIDL
 BOARD_VNDK_VERSION := current
 ifneq ($(filter poplar_dsds maple_dsds, $(TARGET_DEVICE)),)
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(PLATFORM_PATH)/device_framework_manifest_dsds.xml
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest_dsds.xml
 else
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(PLATFORM_PATH)/device_framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 endif
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
