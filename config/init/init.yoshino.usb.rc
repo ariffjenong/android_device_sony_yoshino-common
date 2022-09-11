@@ -58,6 +58,8 @@ on charger
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
 
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+    chown system system /sys/class/leds/red/brightness
+    write /sys/class/leds/red/brightness 255
 
 on post-fs
     # USB for switching RNDIS version
