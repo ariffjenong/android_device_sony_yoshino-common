@@ -87,6 +87,7 @@ ro.config.vc_call_vol_steps=8
 vendor.media.vpp.enable=false
 
 ### BLUETOOTH
+bluetooth.hardware.power.operating_voltage_mv=3300
 ro.vendor.bt.bdaddr_path=/data/vendor/etc/bluetooth_bdaddr
 ro.vendor.btstack.hfp.ver=1.7
 persist.vendor.bt.enable.splita2dp=false
