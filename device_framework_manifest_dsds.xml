@@ -57,19 +57,8 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.drm</name>
-        <version>1.0-4</version>
-        <interface>
-            <name>ICryptoFactory</name>
-            <instance>clearkey</instance>
-            <instance>default</instance>
-            <instance>widevine</instance>
-        </interface>
-        <interface>
-            <name>IDrmFactory</name>
-            <instance>clearkey</instance>
-            <instance>default</instance>
-            <instance>widevine</instance>
-        </interface>
+        <fqname>@1.1::ICryptoFactory/widevine</fqname>
+        <fqname>@1.1::IDrmFactory/widevine</fqname>
     </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.gatekeeper</name>
