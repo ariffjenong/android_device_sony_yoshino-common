@@ -61,12 +61,10 @@ vendor.display.enable_default_color_mode=1
 # HWComposer
 debug.renderengine.backend=threaded
 debug.sf.enable_hwc_vds=1
-debug.renderengine.backend=threaded
 debug.sf.hw=1
 debug.gralloc.enable_fb_ubwc=1
 vendor.display.disable_scaler=1
 vendor.display.perf_hint_window=50
-vendor.display.disable_scaler=1
 
 # HWUI
 debug.hwui.use_buffer_age=false
