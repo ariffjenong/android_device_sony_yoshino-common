@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
-    <item name="none">0</item>
-    <item name="screen.on">68.64</item>
-    <item name="screen.full">434.66</item>
+    <item name="screen.on.display0">68.64</item>
+    <item name="screen.full.display0">434.66</item>
     <item name="bluetooth.active">37.68</item>
     <item name="bluetooth.on">0.89</item>
     <item name="wifi.on">1.64</item>
     <item name="wifi.active">87.43</item>
     <item name="wifi.scan">268.24</item>
-    <item name="dsp.audio">21.94</item>
-    <item name="dsp.video">240.74</item>
+    <item name="audio">21.94</item>
+    <item name="video">240.74</item>
     <item name="camera.avg">495.99</item>
     <item name="camera.flashlight">58.42</item>
     <item name="radio.active">85.49</item>
@@ -26,7 +25,7 @@
     <item name="modem.controller.rx">48.90</item>
     <item name="modem.controller.tx">42.74</item>
     <item name="modem.controller.voltage">570.00</item>
-    <array name="cpu.speeds.cluster0">
+    <array name="cpu.core_speeds.cluster0">
         <value>300000</value>
         <value>364800</value>
         <value>441600</value>
@@ -50,7 +49,7 @@
         <value>1824000</value>
         <value>1900800</value>
     </array>
-    <array name="cpu.speeds.cluster1">
+    <array name="cpu.core_speeds.cluster1">
         <value>300000</value>
         <value>345600</value>
         <value>422400</value>
@@ -83,8 +82,8 @@
         <value>2361600</value>
         <value>2457600</value>
     </array>
-    <item name="cpu.idle">4</item>
-    <array name="cpu.active.cluster0">
+    <item name="cpu.suspend">4</item>
+    <array name="cpu.core_power.cluster0">
         <value>22</value>
         <value>23</value>
         <value>23</value>
@@ -108,7 +107,7 @@
         <value>43</value>
         <value>47</value>
     </array>
-    <array name="cpu.active.cluster1">
+    <array name="cpu.core_power.cluster1">
         <value>26</value>
         <value>27</value>
         <value>27</value>
@@ -145,8 +144,8 @@
         <value>4</value>
         <value>4</value>
     </array>
-    <item name="cpu.awake">52.73</item>
-    <item name="cpu.idle">3.92</item>
+    <item name="cpu.idle">52.73</item>
+    <item name="cpu.suspend">3.92</item>
     <item name="battery.capacity">3230</item>
     <item name="wifi.controller.idle">4.61</item>
     <item name="wifi.controller.rx">185</item>
@@ -163,5 +162,5 @@
     <item name="bluetooth.controller.idle">4.34</item>
     <item name="bluetooth.controller.rx">25</item>
     <item name="bluetooth.controller.tx">25</item>
-    <item name="bluetooth.controller.voltage">3700</item>
+    <item name="bluetooth.controller.voltage">3300</item>
 </device>
