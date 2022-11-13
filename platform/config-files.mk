@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Adaptive charging
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/config/adaptivecharging/adaptivecharging.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/adaptivecharging.xml
+
 ### AUDIO
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/config/audio_policy/audio_output_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_output_policy.conf \
