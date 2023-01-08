@@ -59,7 +59,6 @@ ro.qualcomm.cabl=0
 vendor.display.enable_default_color_mode=1
 
 # HWComposer
-debug.hwui.renderer=skiavk
 debug.renderengine.backend=skiaglthreaded
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=1
